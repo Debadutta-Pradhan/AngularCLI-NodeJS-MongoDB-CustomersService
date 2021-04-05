@@ -4,10 +4,9 @@ pipeline {
     stages{
       stage('Deploy the application using docker-compose'){
         steps{
-        sh '''
-            docker-compose down
-            docker-compose up -d
-        '''
+        sh 'sudo docker-compose build'
+        sh 'sudo docker-compose up -d'
+   
         }
       }
     }
